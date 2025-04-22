@@ -7,6 +7,14 @@
   min-height: 100vh;
 }
 
+.cartBody h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #F7E1BC;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -28,6 +36,8 @@
 }
 
 .productImage {
+  width: 80px !important;
+  height: 80px !important;
   border-radius: 4px;
   border: 1px solid #F7E1BC;
   object-fit: cover;
@@ -41,6 +51,12 @@
   margin: 0 0 5px;
   font-size: 1.2em;
   font-family: 'Dancing Script', cursive;
+  color: #F7E1BC;
+}
+
+.cartItemDetails p {
+  margin: 5px 0;
+  color: #F7E1BC;
 }
 
 .cartItemActions {
@@ -50,7 +66,7 @@
   align-items: flex-end;
 }
 
-.cartItemActions input {
+.quantityInput {
   background-color: #F7E1BC;
   color: #54372B;
   border: 1px solid #54372B;
@@ -58,64 +74,93 @@
   padding: 5px;
   width: 60px;
   font-family: 'Leiko', sans-serif;
+  text-align: center;
 }
 
-.btnRemove {
-  background-color: #a40000;
-  color: #F7E1BC;
+.btnUpdate, .btnDelete {
+  padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  padding: 8px 12px;
   font-family: 'Leiko', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 80px;
 }
 
-.btnRemove:hover {
-  background-color: #800000;
+.btnUpdate {
+  background-color: #F7E1BC;
+  color: #54372B;
+}
+
+.btnDelete {
+  background-color: #54372B;
+  color: #F7E1BC;
+  border: 1px solid #F7E1BC;
+}
+
+.btnUpdate:hover {
+  background-color: #54372B;
+  color: #F7E1BC;
+  border: 1px solid #F7E1BC;
+}
+
+.btnDelete:hover {
+  background-color: #F7E1BC;
+  color: #54372B;
 }
 
 .cartSummary {
   text-align: right;
   margin-top: 20px;
+  padding: 20px;
 }
 
 .cartSummary p {
   font-size: 1.2em;
-  margin: 5px 0;
+  margin: 5px 0 15px;
+  color: #F7E1BC;
 }
 
-.btnCheckout {
+.btnPlaceOrder {
   background-color: #F7E1BC;
   color: #54372B;
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-family: 'Leiko', sans-serif;
-  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.btnCheckout:hover {
+.btnPlaceOrder:hover {
   background-color: #54372B;
   color: #F7E1BC;
+  border: 1px solid #F7E1BC;
 }
 
 .toast {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #F7E1BC;
-  color: #54372B;
+  background-color: #54372B;
+  color: #F7E1BC;
   padding: 10px 20px;
   border-radius: 4px;
+  border: 1px solid #F7E1BC;
   animation: fadeIn 0.3s ease;
+  z-index: 1000;
 }
 
 .toast.error {
-  background-color: #a40000;
+  background-color: #221518;
   color: #F7E1BC;
+  border: 1px solid #F7E1BC;
+}
+
+.toast.success {
+  background-color: #54372B;
+  color: #F7E1BC;
+  border: 1px solid #F7E1BC;
 }
 
 @keyframes fadeIn {

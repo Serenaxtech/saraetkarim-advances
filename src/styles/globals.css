@@ -1,3 +1,14 @@
+:root {
+  --brown-dark: #452F22;
+  --brown-medium: #5C3A28;
+  --brown-light: #A48464;
+  --cream: #F5E9D5;
+  --background: #A48464;
+  --font-heading: 'Dancing Script', cursive;
+  --font-body: 'Leko', sans-serif;
+}
+
+
 /* Base styles */
 body {
     margin: 0;
@@ -394,34 +405,9 @@ body {
   line-height: 1.8;
 }
 
-/* Menu Section */
-.popular-menu {
-  padding: 4rem 0;
-}
-
-.menu-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3rem;
-  color: #221518;
-}
-
-.menu-item-left, .menu-item-right {
-  font-size: 1.2rem;
-  margin: 1rem 0;
-}
-
-.menu-name {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.4rem;
-}
-
-.menu-price {
-  font-weight: bold;
-}
-
-.line {
-  border-top: 2px dotted #221518;
-  margin: 0 1rem;
+.why-cake-image {
+  max-height: 400px;
+  object-fit: contain;
 }
 
 /* Footer Section */
@@ -590,13 +576,10 @@ body {
     margin-bottom: 2rem;
   }
 }
-.why-cake-image {
-  max-height: 400px;
-  object-fit: contain;
-}
 
 /* Menu Section */
 .popular-menu {
+    padding: 4rem 0;
     background-color: #3A2525;
     padding: 80px 20px;
     color: #f8e8d6;
@@ -696,3 +679,4 @@ body {
       padding-right: 0;
     }
   }
+

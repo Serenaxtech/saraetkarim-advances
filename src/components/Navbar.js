@@ -48,13 +48,13 @@ export default function Navbar() {
               <Link href="/" className="nav-link active">Home</Link>
             </li>
             <li className="nav-item">
-              <Link href="/menu" className="nav-link">Menu</Link>
+              <Link href="#" className="nav-link">Menu</Link>
             </li>
             <li className="nav-item">
               <Link href="/products" className="nav-link">Products</Link>
             </li>
             <li className="nav-item">
-              <Link href="/contact" className="nav-link">Contact</Link>
+              <Link href="#" className="nav-link">Contact</Link>
             </li>
           </ul>
         </div>

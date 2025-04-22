@@ -1,0 +1,49 @@
+.thankYouBody {
+  background-color: #221518;
+  color: #F7E1BC;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Leiko', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.thankYouBody h1 {
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 40px;
+  font-size: 3em;
+}
+
+.continueShoppingBtn {
+  background-color: #F7E1BC;
+  color: #54372B;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-family: 'Leiko', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2em;
+  position: relative;
+}
+
+.continueShoppingBtn::after {
+  content: "→";
+  margin-left: 10px;
+  transition: margin-left 0.3s ease;
+}
+
+.continueShoppingBtn:hover {
+  background-color: #54372B;
+  color: #F7E1BC;
+}
+
+.continueShoppingBtn:hover::after {
+  margin-left: 20px;
+}

@@ -1,0 +1,186 @@
+.pageWrapper {
+  background-color: #221518;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Update existing container class */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #F7E1BC;
+  font-family: 'Leiko', sans-serif;
+}
+
+.container h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #F7E1BC;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.productDetailsContainer {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+  border-bottom: 1px solid #F7E1BC;
+  padding-bottom: 20px;
+}
+
+.productImg {
+  max-width: 300px;
+  border: 2px solid #F7E1BC;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.productInfoSection {
+  flex: 1;
+}
+
+.productInfoSection p {
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.productInfoSection strong {
+  display: inline-block;
+  width: 100px;
+}
+
+.form {
+  margin-top: 20px;
+  border: 1px solid #F7E1BC;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #54372B;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #F7E1BC;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  background-color: #F7E1BC;
+  color: #54372B;
+  border: 1px solid #54372B;
+  border-radius: 4px;
+  font-family: 'Leiko', sans-serif;
+}
+
+.form button {
+  background-color: #F7E1BC;
+  color: #54372B;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #54372B;
+  color: #F7E1BC;
+}
+
+.reviews {
+  margin-top: 40px;
+}
+
+.reviews h2 {
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 20px;
+}
+
+.reviewsList {
+  margin-bottom: 30px;
+}
+
+.reviewItem {
+  border-bottom: 1px solid #F7E1BC;
+  padding: 15px 0;
+}
+
+.starContainer {
+  margin-bottom: 15px;
+}
+
+.star {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  margin-right: 5px;
+  transition: color 0.3s ease;
+}
+
+.star.selected {
+  color: gold;
+}
+
+.star:hover {
+  color: gold;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .productDetailsContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .productImg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .productInfoSection {
+    width: 100%;
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .reviews h2 {
+    font-size: 1.8rem;
+  }
+
+  .starContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 1.8rem;
+  }
+
+  .form input,
+  .form textarea {
+    padding: 6px;
+  }
+
+  .star {
+    font-size: 20px;
+  }
+}

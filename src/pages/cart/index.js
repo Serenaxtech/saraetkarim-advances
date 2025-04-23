@@ -149,15 +149,15 @@ export default function Cart() {
               return (
                 <div key={item.cart_ID} className={styles.cartItem}>
                   <Image
-                    src={product.img || '/images/placeholder.jpg'}
-                    alt={product.name || `Product ${item.product_ID}`}
+                    src={product.product_IMG || '/images/placeholder.jpg'}
+                    alt={product.product_Name || `Product ${item.product_ID}`}
                     width={80}
                     height={80}
                     className={styles.productImage}
                   />
                   <div className={styles.cartItemDetails}>
-                    <h2>{product.name || `Product ${item.product_ID}`}</h2>
-                    <p>Price: ${product.price || '0.00'}</p>
+                    <h2>{product.product_Name || `Product ${item.product_ID}`}</h2>
+                    <p>Price: ${product.product_Price || '0.00'}</p>
                   </div>
                   <div className={styles.cartItemActions}>
                     <input

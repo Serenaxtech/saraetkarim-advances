@@ -144,16 +144,16 @@ export default function ProductDetails() {
   return (
     <div className={styles.pageWrapper}>
       <Head>
-        <title>{product.name} - Sara et Karim</title>
+        <title>{product.product_Name} - Sara et Karim</title>
       </Head>
   
       <div className={styles.container}>
-        <h1>{product.name}</h1>
+        <h1>{product.product_Name}</h1>
         
         <div className={styles.productDetailsContainer}>
           <Image
-            src={product.img}
-            alt={product.name}
+            src={product.product_IMG}
+            alt={product.product_Name}
             width={300}
             height={300}
             className={styles.productImg}
@@ -161,9 +161,9 @@ export default function ProductDetails() {
           />
           
           <div className={styles.productInfoSection}>
-            <p><strong>Price:</strong> ${product.price}</p>
-            <p><strong>Description:</strong> {product.description}</p>
-            <p><strong>Info:</strong> {product.info}</p>
+            <p><strong>Price:</strong> ${product.product_Price}</p>
+            <p><strong>Description:</strong> {product.product_Description}</p>
+            <p><strong>Info:</strong> {product.product_Info}</p>
 
             <form className={styles.form} onSubmit={handleAddToCart}>
               <label htmlFor="quantity">Quantity:</label>
@@ -187,7 +187,7 @@ export default function ProductDetails() {
               reviews.map((review, index) => (
                 <div key={index} className={styles.reviewItem}>
                   <p><strong>Rating:</strong> {review.rating} / 5</p>
-                  <p>{review.reviewtext}</p>
+                  <p>{review.review_Text}</p>
                 </div>
               ))
             ) : (

@@ -2,9 +2,17 @@
   background-color: #221518;
   color: #F7E1BC;
   margin: 0;
-  padding: 20px;
+  padding: 40px 20px; /* Added more padding */
   font-family: 'Leiko', sans-serif;
   min-height: 100vh;
+}
+
+.addressBody h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #F7E1BC;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em; /* Match Cart title size */
 }
 
 .container {
@@ -24,42 +32,62 @@
   margin-bottom: 20px;
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 15px; /* Increased gap */
+  cursor: pointer; /* Indicate it's clickable */
 }
 
 .addressItem input[type="radio"] {
   margin-top: 5px;
+  cursor: pointer;
+  /* Optional: Style the radio button itself */
+  accent-color: #F7E1BC; /* Change the check color */
+}
+
+.addressDetails {
+  flex-grow: 1; /* Allow details to take remaining space */
 }
 
 .addressDetails p {
   margin: 5px 0;
+  line-height: 1.4; /* Improve readability */
 }
 
 .addAddressForm {
   background-color: #54372B;
   border: 2px solid #F7E1BC;
   border-radius: 8px;
-  padding: 20px;
+  padding: 30px; /* Increased padding */
   margin-bottom: 40px;
 }
 
+.addAddressForm h2 {
+  font-family: 'Dancing Script', cursive;
+  margin-top: 0;
+  margin-bottom: 25px; /* Added space below h2 */
+  color: #F7E1BC;
+  font-size: 1.8em; /* Adjust size */
+}
+
 .formGroup {
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* Increased spacing */
 }
 
 .formGroup label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px; /* Increased space */
   font-weight: bold;
+  color: #F7E1BC; /* Ensure label color */
 }
 
-.formGroup input {
+.formGroup input[type="text"] {
   background-color: #F7E1BC;
   color: #54372B;
   border: 1px solid #54372B;
   border-radius: 4px;
-  padding: 8px;
+  padding: 10px; /* Increased padding */
   width: 100%;
+  font-family: 'Leiko', sans-serif; /* Ensure font consistency */
+  box-sizing: border-box; /* Include padding in width */
 }
 
 .btn {
@@ -67,37 +95,54 @@
   color: #54372B;
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 12px 24px; /* Match Place Order button */
   font-family: 'Leiko', sans-serif;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Match other buttons */
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid transparent; /* Add border for hover effect consistency */
 }
 
 .btn:hover {
   background-color: #54372B;
   color: #F7E1BC;
+  border: 1px solid #F7E1BC; /* Match other button hovers */
 }
+
+.btn:disabled {
+  background-color: #a89a85; /* Lighter brown when disabled */
+  color: #54372B;
+  cursor: not-allowed;
+  border-color: transparent;
+}
+
 
 .checkoutBtnContainer {
   text-align: center;
   margin-top: 30px;
 }
 
+/* Notification Styles (similar to Cart) */
 .toast {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #F7E1BC;
-  color: #54372B;
+  background-color: #54372B; /* Default/Success background */
+  color: #F7E1BC; /* Default/Success text */
   padding: 10px 20px;
   border-radius: 4px;
+  border: 1px solid #F7E1BC;
   animation: fadeIn 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .toast.error {
-  background-color: #a40000;
+  background-color: #221518; /* Darker background for error */
   color: #F7E1BC;
+  border: 1px solid #F7E1BC;
 }
 
 @keyframes fadeIn {

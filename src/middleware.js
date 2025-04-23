@@ -14,8 +14,6 @@ import { NextResponse } from 'next/server';
 export function middleware(request) {
   // Get authentication token from cookies
   const authToken = request.cookies.get('authToken');
-  console.log('Auth Token:', authToken);
-  console.log('Request Path:', request.nextUrl.pathname);
   
   // Protected routes that require authentication
   const protectedPaths = [

@@ -7,9 +7,9 @@ import { useRouter } from 'next/router';
 export default function Profile() {
   const [userData, setUserData] = useState({
     id: '',
-    name: '',
-    email: '',
-    number: ''
+    customer_FullName: '',
+    customer_Email: '',
+    customer_PhoneNumber: ''
   });
   const [formData, setFormData] = useState({
     name: '',
@@ -25,7 +25,6 @@ export default function Profile() {
 
   const fetchUserData = async () => {
     try {
-      // First, get the user ID from the auth check endpoint
       const authResponse = await fetch('/api/auth/check', {
         credentials: 'include'
       });
@@ -37,7 +36,6 @@ export default function Profile() {
       const authData = await authResponse.json();
       const userId = authData.user.id;
 
-      // Then fetch the user details using the ID
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/customers/${userId}`, {
         credentials: 'include'
       });
@@ -48,7 +46,12 @@ export default function Profile() {
 
       const data = await response.json();
       setUserData({ ...data, id: userId });
-      setFormData(data);
+      // Initialize form data with user data
+      setFormData({
+        name: data.customer_FullName,
+        email: data.customer_Email,
+        number: data.customer_PhoneNumber
+      });
     } catch (error) {
       console.error('Error fetching user data:', error);
       showNotification('Failed to load profile data', 'error');
@@ -58,7 +61,7 @@ export default function Profile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/customers/${userData.id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/customers/${userData.customer_ID}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -69,7 +72,14 @@ export default function Profile() {
         throw new Error('Failed to update profile');
       }
 
-      setUserData({ ...userData, ...formData });
+      // Update both userData and formData with new values
+      const updatedUserData = {
+        ...userData,
+        customer_FullName: formData.name,
+        customer_Email: formData.email,
+        customer_PhoneNumber: formData.number
+      };
+      setUserData(updatedUserData);
       showNotification('Profile updated successfully', 'success');
     } catch (error) {
       console.error('Error updating profile:', error);
@@ -91,14 +101,12 @@ export default function Profile() {
     }, 4000);
   };
 
-  // Add password state
   const [deletePassword, setDeletePassword] = useState('');
   
-  // Add delete account handler
   const handleDeleteAccount = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/customers/${userData.id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/customers/${userData.customer_ID}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password: deletePassword }),
@@ -106,7 +114,6 @@ export default function Profile() {
       });
   
       if (!response.ok) {
-        // Try to extract error message from backend
         let errorMsg = 'Failed to delete account';
         try {
           const errorData = await response.json();
@@ -148,9 +155,9 @@ export default function Profile() {
 
         <div className={styles.profileContainer}>
           <div className={styles.infoDisplay}>
-            <p><strong>Full Name:</strong> {userData.name}</p>
-            <p><strong>Email:</strong> {userData.email}</p>
-            <p><strong>Phone:</strong> {userData.number}</p>
+            <p><strong>Full Name:</strong> {userData.customer_FullName}</p>
+            <p><strong>Email:</strong> {userData.customer_Email}</p>
+            <p><strong>Phone:</strong> {userData.customer_PhoneNumber}</p>
           </div>
 
           <h2>Update Profile</h2>
@@ -193,7 +200,6 @@ export default function Profile() {
             </button>
           </form>
 
-          {/* Delete Account Section - now inside profileContainer */}
           <div className={styles.deleteSection}>
             <h2>Delete Account</h2>
             <p>Enter your password to confirm account deletion. This action is irreversible.</p>
